@@ -1,0 +1,112 @@
+.dashboard {
+  padding: 32px 40px;
+  max-width: 640px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.dashboard--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.dashboard__header {
+  margin-bottom: 28px;
+}
+
+.dashboard__name {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+}
+
+.dashboard__path {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin: 0;
+}
+
+.dashboard__grid {
+  display: flex;
+  gap: 32px;
+  padding: 20px 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 24px;
+}
+
+.dashboard__stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard__stat-value {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  color: var(--commit);
+}
+
+.dashboard__stat-label {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.dashboard__row {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 24px;
+}
+
+.dashboard__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dashboard__field-label {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.dashboard__field-value {
+  font-size: 14px;
+}
+
+.dashboard__latest {
+  margin-bottom: 24px;
+}
+
+.dashboard__latest-message {
+  font-size: 15px;
+  margin: 6px 0 0;
+}
+
+.dashboard__branches ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dashboard__branches li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 6px;
+}
+
+.dashboard__branch-current {
+  color: var(--commit);
+}
+
+.dashboard__branch-commit {
+  color: var(--text-muted);
+  font-size: 12px;
+}

@@ -1,0 +1,87 @@
+.app {
+  display: flex;
+  height: 100%;
+}
+
+.app__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.app__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--hairline);
+  flex-shrink: 0;
+}
+
+.app__tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.app__tab {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.app__tab--active {
+  background: var(--surface-raised);
+  color: var(--text);
+}
+
+.app__search {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 5px;
+  color: var(--text);
+  padding: 6px 12px;
+  font-size: 13px;
+  width: 220px;
+}
+
+.app__search::placeholder {
+  color: var(--text-muted);
+}
+
+.app__banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.app__banner--error {
+  background: var(--danger-dim);
+  color: var(--danger);
+}
+
+.app__banner--info {
+  background: var(--branch-dim);
+  color: var(--branch);
+}
+
+.app__banner-dismiss {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.app__content {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}

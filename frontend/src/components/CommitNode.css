@@ -1,0 +1,85 @@
+.commit-node {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  padding: 8px 12px 8px 10px;
+  min-width: 220px;
+  max-width: 260px;
+  cursor: pointer;
+  transition: border-color 120ms ease, transform 120ms ease;
+}
+
+.commit-node:hover,
+.commit-node:focus-visible {
+  border-color: var(--commit);
+}
+
+.commit-node--merge {
+  border-style: dashed;
+}
+
+.commit-node__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--commit);
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.commit-node--merge .commit-node__dot {
+  background: var(--branch);
+}
+
+.commit-node__body {
+  min-width: 0;
+  flex: 1;
+}
+
+.commit-node__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.commit-node__hash {
+  font-size: 12px;
+  color: var(--commit);
+}
+
+.commit-node__head {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  background: var(--commit);
+  border-radius: 3px;
+  padding: 1px 5px;
+}
+
+.commit-node__message {
+  font-size: 13px;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.commit-node__branches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.commit-node__branch-pill {
+  font-size: 11px;
+  color: var(--branch);
+  border: 1px solid var(--branch-dim);
+  border-radius: 10px;
+  padding: 1px 7px;
+}

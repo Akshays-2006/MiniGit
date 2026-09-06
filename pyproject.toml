@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minigit"
+version = "0.1.0"
+description = "A lightweight Git-inspired version control system implemented from scratch."
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+minigit = "cli.main:main"
+
+[project.optional-dependencies]
+api = ["fastapi", "uvicorn", "pydantic"]
+dev = ["pytest", "ruff", "httpx"]
+
+[tool.setuptools.packages.find]
+include = ["api*", "cli*", "core*", "frontend*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+per-file-ignores = { "api/routes/*.py" = ["B008"] }
+

@@ -1,0 +1,140 @@
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-right: 1px solid var(--hairline);
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 18px 14px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.sidebar__brand-mark {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--commit);
+  display: inline-block;
+}
+
+.sidebar__section {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.sidebar__section--footer {
+  margin-top: auto;
+  border-bottom: none;
+}
+
+.sidebar__section:has(.sidebar__stat) {
+  display: flex;
+  gap: 18px;
+}
+
+.sidebar__stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__stat-value {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  color: var(--text);
+}
+
+.sidebar__stat-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.sidebar__heading {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.sidebar__branch-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar__branch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+}
+
+.sidebar__branch:hover {
+  background: var(--surface-raised);
+}
+
+.sidebar__branch-name {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 6px 8px;
+  flex: 1;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar__branch-name:disabled {
+  cursor: default;
+}
+
+.sidebar__branch--current .sidebar__branch-name {
+  color: var(--commit);
+}
+
+.sidebar__branch-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--commit);
+  flex-shrink: 0;
+}
+
+.sidebar__branch-merge {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 11px;
+  padding: 6px 8px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.sidebar__branch:hover .sidebar__branch-merge {
+  opacity: 1;
+}
+
+.sidebar__branch-merge:hover {
+  color: var(--branch);
+}
+
+.sidebar__latest-message {
+  font-size: 13px;
+  color: var(--text);
+}

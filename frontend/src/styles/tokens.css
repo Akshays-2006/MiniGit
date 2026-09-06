@@ -1,0 +1,78 @@
+:root {
+  /* Color — every hue maps to something real in the data model, not decoration. */
+  --ink: #14171d;
+  --surface: #1c212b;
+  --surface-raised: #232936;
+  --hairline: #2c323f;
+  --text: #d9dce3;
+  --text-muted: #767c8a;
+
+  --commit: #e8a33d;
+  --commit-dim: #6b5730;
+  --branch: #4fb6a8;
+  --branch-dim: #2f5551;
+  --danger: #e0654b;
+  --danger-dim: #5a2e26;
+
+  --font-ui: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--commit);
+  outline-offset: 2px;
+}
+
+code,
+.mono {
+  font-family: var(--font-mono);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--hairline);
+  border-radius: 5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

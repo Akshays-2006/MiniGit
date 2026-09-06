@@ -1,0 +1,21 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # Mount a repository at this path (see the volume below) and point
+      # the API at it. Defaults to the container's working directory.
+      - MINIGIT_REPO_PATH=/repo
+    volumes:
+      - ./demo-repo:/repo
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_BASE: http://localhost:8000
+    ports:
+      - "4173:4173"
+    depends_on:
+      - api

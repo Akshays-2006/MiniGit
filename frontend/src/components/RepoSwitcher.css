@@ -1,0 +1,67 @@
+.repo-switcher {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--hairline);
+  padding: 10px 18px 12px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.repo-switcher:hover {
+  background: var(--surface-raised);
+}
+
+.repo-switcher__label {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.repo-switcher__path {
+  font-size: 12px;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.repo-switcher--editing {
+  flex-direction: column;
+  align-items: stretch;
+  cursor: default;
+  gap: 6px;
+  padding: 10px 18px 12px;
+}
+
+.repo-switcher__input {
+  background: var(--ink);
+  border: 1px solid var(--commit-dim);
+  border-radius: 4px;
+  color: var(--text);
+  padding: 6px 8px;
+  font-size: 12px;
+  width: 100%;
+}
+
+.repo-switcher__button {
+  background: var(--commit);
+  color: var(--ink);
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.repo-switcher__button--ghost {
+  background: none;
+  border: 1px solid var(--hairline);
+  color: var(--text-muted);
+  margin-left: 6px;
+}

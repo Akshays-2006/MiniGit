@@ -1,0 +1,179 @@
+.detail-panel {
+  width: 360px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-left: 1px solid var(--hairline);
+  height: 100%;
+  overflow-y: auto;
+  animation: slide-in 160ms ease-out;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail-panel {
+    animation: none;
+  }
+}
+
+.detail-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.detail-panel__title {
+  color: var(--commit);
+  font-size: 14px;
+}
+
+.detail-panel__close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.detail-panel__close:hover {
+  background: var(--surface-raised);
+  color: var(--text);
+}
+
+.detail-panel__body {
+  padding: 18px;
+}
+
+.detail-panel__message {
+  font-size: 15px;
+  color: var(--text);
+  margin: 0 0 18px;
+  white-space: pre-wrap;
+}
+
+.detail-panel__meta {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 8px 12px;
+  margin: 0 0 18px;
+}
+
+.detail-panel__meta dt {
+  color: var(--text-muted);
+  font-size: 12px;
+  padding-top: 2px;
+}
+
+.detail-panel__meta dd {
+  margin: 0;
+  font-size: 13px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.detail-panel__full-hash {
+  word-break: break-all;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.detail-panel__link {
+  background: none;
+  border: none;
+  color: var(--branch);
+  cursor: pointer;
+  padding: 0;
+  font-size: 13px;
+}
+
+.detail-panel__link:hover {
+  text-decoration: underline;
+}
+
+.detail-panel__muted {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.detail-panel__actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.detail-panel__button {
+  background: var(--commit);
+  color: var(--ink);
+  border: none;
+  border-radius: 5px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.detail-panel__button--ghost {
+  background: none;
+  border: 1px solid var(--hairline);
+  color: var(--text);
+}
+
+.detail-panel__diff {
+  border-top: 1px solid var(--hairline);
+  padding-top: 14px;
+}
+
+.diff-file {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.diff-file--added {
+  color: var(--branch);
+}
+
+.diff-file--deleted {
+  color: var(--danger);
+}
+
+.diff-file__path {
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.diff-block {
+  background: var(--ink);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: 12px;
+  overflow-x: auto;
+  margin: 0;
+}
+
+.diff-line--add {
+  color: var(--branch);
+}
+
+.diff-line--del {
+  color: var(--danger);
+}
+
+.diff-line--hunk {
+  color: var(--text-muted);
+}

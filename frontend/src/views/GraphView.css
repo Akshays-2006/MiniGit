@@ -1,0 +1,44 @@
+.graph-view {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  background: var(--ink);
+}
+
+.graph-view--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.graph-view__filters {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 5;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  max-width: calc(100% - 32px);
+}
+
+.graph-view__filter-pill {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  color: var(--text-muted);
+  border-radius: 12px;
+  padding: 4px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.graph-view__filter-pill--active {
+  color: var(--commit);
+  border-color: var(--commit-dim);
+}
+
+.react-flow__attribution {
+  display: none;
+}
