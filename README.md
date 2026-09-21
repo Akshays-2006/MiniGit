@@ -1,14 +1,14 @@
 # MiniGit
 
 A lightweight Git-inspired version control system, implemented from
-scratch in Python — content-addressable object store, commit DAG,
+scratch in Python - content-addressable object store, commit DAG,
 branches, staging, checkout, diff, three-way merge with conflict
-detection — plus a FastAPI REST layer and an interactive React
+detection - plus a FastAPI REST layer and an interactive React
 dashboard for visualizing the repository graph.
 
 No Git library, no shelling out to `git`, no wrapped Git internals. Every
-piece here — the hashing scheme, the tree/commit model, the merge
-algorithm — is built from first principles. See
+piece here - the hashing scheme, the tree/commit model, the merge
+algorithm - is built from first principles. See
 [`docs/architecture.md`](docs/architecture.md) for the full design
 writeup and the reasoning behind each decision.
 
@@ -16,7 +16,7 @@ writeup and the reasoning behind each decision.
 
 This is a portfolio project built to demonstrate systems-engineering
 fundamentals that don't show up in most CRUD-app projects: content
-addressing, DAG traversal, tree-diffing, and a three-way merge — the
+addressing, DAG traversal, tree-diffing, and a three-way merge - the
 kind of thing you'd otherwise only encounter by reading Git's source.
 Every design decision below is something I can explain and defend, not
 just code that happens to pass its tests.
@@ -42,7 +42,7 @@ just code that happens to pass its tests.
 ```
 
 The CLI and the REST API are both thin adapters over the same
-`core.repository.Repository` class — neither contains any
+`core.repository.Repository` class - neither contains any
 version-control logic of its own. Full breakdown in
 [`docs/architecture.md`](docs/architecture.md).
 
@@ -142,14 +142,14 @@ npm run dev
 Proxies `/api/*` to `http://localhost:8000` by default in dev (see
 `vite.config.ts`; override with `VITE_BACKEND_URL`). Three views:
 
-- **Graph** — the commit DAG as an interactive React Flow canvas.
+- **Graph** - the commit DAG as an interactive React Flow canvas.
   Branch tips get colored labels, HEAD is badged, merge commits get a
   dashed border, and clicking a node opens the commit detail panel
   (parents, tree, "View Diff", "Inspect Object"). Includes branch
   filtering and a live search that dims non-matching commits.
-- **Object Explorer** — a literal tree view of commit → tree → blob,
+- **Object Explorer** - a literal tree view of commit → tree → blob,
   lazily fetching each level as you expand it.
-- **Dashboard** — repository-wide stats (commit/branch/object counts,
+- **Dashboard** - repository-wide stats (commit/branch/object counts,
   current branch, latest commit).
 
 ## Merge algorithm, in short
